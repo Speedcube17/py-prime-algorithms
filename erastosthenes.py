@@ -1,3 +1,5 @@
+import time
+
 def sieve_of_erastosthenes(max_number = 10): 
     # num[0]=1; num[1]=2; ...
     num = [None] * (max_number)
