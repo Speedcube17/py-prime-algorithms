@@ -18,6 +18,8 @@ if primes_smaller_max > 100000000:
     quit()
 print()
 
+starttime = time.time()
+
 
 # -------------------- Create new Working Directory -------------------- #
 
@@ -53,6 +55,16 @@ eras_file.write("Runtime "+str(output_of_eras[1])+"\n")  #saving runtime of Siev
 eras_file.write(str(output_of_eras[2])+" Checks performed") #saving amount of checks in Sieve of Erastosthenes
 eras_file.close()   #txt saved
 
+print("Sieve of Erastosthenes:")
+check_file_primes(name_of_eras_file)
+print("Runtime: "+str(output_of_eras[1])+"s")
+print("Performed Checks: "+str(output_of_eras[2]))
+print()
+
+# clean up
+output_of_eras = []
+eras_prime = []
+
 
 # -------------------- Sieve of Sundaram -------------------- #
 
@@ -73,6 +85,16 @@ for i in range(len(sund_prime)):    #for sublists in main list
 sund_file.write("Runtime "+str(output_of_sund[1])+"\n")  #saving runtime of Sieve of Sundaram
 sund_file.write(str(output_of_sund[2])+" Checks performed") #saving amount of checks in Sieve of Sundaram
 sund_file.close()   #txt saved
+
+print("Sieve of Sundaram:")
+check_file_primes(name_of_sund_file)
+print("Runtime: "+str(output_of_sund[1])+"s")
+print("Performed Checks: "+str(output_of_sund[2]))
+print()
+
+# clean up
+output_of_sund = []
+sund_prime = []
 
 
 # -------------------- Sieve of Atkin -------------------- #
@@ -95,26 +117,17 @@ atki_file.write("Runtime "+str(output_of_atki[1])+"\n")  #saving runtime of Siev
 atki_file.write(str(output_of_atki[2])+" Checks performed") #saving amount of checks in Sieve of Atkin
 atki_file.close()   #txt saved
 
-
-# -------------------- Check Primes -------------------- #
-
-print("Sieve of Erastosthenes:")
-check_file_primes(name_of_eras_file)
-print("Runtime: "+str(output_of_eras[1])+"s")
-print("Performed Checks: "+str(output_of_eras[2]))
-
-print()
-
-print("Sieve of Sundaram:")
-check_file_primes(name_of_sund_file)
-print("Runtime: "+str(output_of_sund[1])+"s")
-print("Performed Checks: "+str(output_of_sund[2]))
-
-print()
-
 print("Sieve of Atkin:")
 check_file_primes(name_of_atki_file)
 print("Runtime: "+str(output_of_atki[1])+"s")
 print("Performed Checks: "+str(output_of_atki[2]))
-
 print()
+
+# clean up
+output_of_atki = []
+atki_prime = []
+
+
+# -------------------- End -------------------- #
+
+print("All operations took: "+str(time.time()-starttime))
