@@ -45,9 +45,9 @@ eras_prime = output_of_eras[0]
 
 # formatting and writing to txt
 for i in range(len(eras_prime)):    #for sublists in main list
-    line = "Num "+str(eras_prime[i][0])+" is prime: "+str(eras_prime[i][1])
+    line = str(eras_prime[i][0])+" "+str(eras_prime[i][1])
     if type(eras_prime[i][2])!=type(0):                     #if a prime number was found and sieved
-        line+=", Operation took "+str(eras_prime[i][2])+" seconds\n"
+        line+=" "+str(eras_prime[i][2])+"\n"
     else: line+="\n"
     eras_file.write(line)   #writing one formatted sublist
 
@@ -76,9 +76,9 @@ sund_prime = output_of_sund[0]
 
 # formatting and writing to txt
 for i in range(len(sund_prime)):    #for sublists in main list
-    line = "Num "+str(sund_prime[i][0])+" is prime: "+str(sund_prime[i][1])
+    line = str(sund_prime[i][0])+" "+str(sund_prime[i][1])
     if type(sund_prime[i][2])!=type(0):                     #if a prime number was found and sieved
-        line+=", Operation took "+str(sund_prime[i][2])+" seconds\n"
+        line+=" "+str(sund_prime[i][2])+"\n"
     else: line+="\n"
     sund_file.write(line)   #writing one formatted sublist
 
@@ -107,9 +107,9 @@ atki_prime = output_of_atki[0]
 
 # formatting and writing to txt
 for i in range(len(atki_prime)):    #for sublists in main list
-    line = "Num "+str(atki_prime[i][0])+" is prime: "+str(atki_prime[i][1])
+    line = str(atki_prime[i][0])+" "+str(atki_prime[i][1])
     if type(atki_prime[i][2])!=type(0):                     #if a prime number was found and sieved
-        line+=", Operation took "+str(atki_prime[i][2])+" seconds\n"
+        line+=" "+str(atki_prime[i][2])+"\n"
     else: line+="\n"
     atki_file.write(line)   #writing one formatted sublist
 

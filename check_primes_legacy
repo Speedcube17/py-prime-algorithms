@@ -1,4 +1,4 @@
-def check_file_primes(file_to_check): 
+def check_file_primes_old(file_to_check): 
     check_file = file_to_check
 
     checked = open("100_mil_checked.txt", "r")
@@ -11,7 +11,7 @@ def check_file_primes(file_to_check):
     check = 0
 
     for linenum in range(len(file_lines)-2): 
-        if file_lines[linenum].split()[1].replace(",","") == "True": 
+        if file_lines[linenum].split()[4].replace(",","") == "True": 
             if linenum+1 == int(checked_lines[check]): 
                 check += 1
             else:
