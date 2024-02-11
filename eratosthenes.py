@@ -1,17 +1,17 @@
 import time
 
-def sieve_of_erastosthenes(max_number = 10):
+def sieve_of_eratosthenes(max_number = 10):
     # starttime of the script
     starttime = time.time()
     checks_performed = 0
     
-    # create list of all numbers < max_number
+    # create list of all numbers <= max_number
     num = [[i+1, True, 0] for i in range(max_number)]
     
     # special case 1
     num[0][1]=False
     
-    # sieve of erastosthenes
+    # sieve of eratosthenes
     for i in range(1, round((max_number**(1/2))+0.5)): #square root of max_num+0.5 to round up to nearest int
         if num[i][1]==True: #if i is saved as prime
             num[i][2] = time.time()-starttime

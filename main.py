@@ -5,7 +5,7 @@ import os
 
 # -------------------- import of created sieves -------------------- #
 
-from erastosthenes import sieve_of_erastosthenes
+from eratosthenes import sieve_of_eratosthenes
 from sundaram import sieve_of_sundaram
 from atkin import sieve_of_atkin
 
@@ -35,35 +35,35 @@ print("Directory "+dir_name+" was successfully created!")
 print()
 
 
-# -------------------- Sieve of Erastosthenes -------------------- #
+# -------------------- Sieve of eratosthenes -------------------- #
 
-name_of_eras_file = os.path.join(path, str("Erastothenes_"+formattime)+".txt")
-eras_file = open(name_of_eras_file, "w")    #create new file with starttime (before calculating)
+name_of_erat_file = os.path.join(path, str("Eratosthenes_"+formattime)+".txt")
+erat_file = open(name_of_erat_file, "w")    #create new file with starttime (before calculating)
 
-output_of_eras = sieve_of_erastosthenes(primes_smaller_max)    #calculating with sieve of Erastosthenes
-eras_prime = output_of_eras[0]
+output_of_erat = sieve_of_eratosthenes(primes_smaller_max)    #calculating with sieve of eratosthenes
+erat_prime = output_of_erat[0]
 
 # formatting and writing to txt
-for i in range(len(eras_prime)):    #for sublists in main list
-    line = str(eras_prime[i][0])+" "+str(eras_prime[i][1])
-    if type(eras_prime[i][2])!=type(0):                     #if a prime number was found and sieved
-        line+=" "+str(eras_prime[i][2])+"\n"
+for i in range(len(erat_prime)):    #for sublists in main list
+    line = str(erat_prime[i][0])+" "+str(erat_prime[i][1])
+    if type(erat_prime[i][2])!=type(0):                     #if a prime number was found and sieved
+        line+=" "+str(erat_prime[i][2])+"\n"
     else: line+="\n"
-    eras_file.write(line)   #writing one formatted sublist
+    erat_file.write(line)   #writing one formatted sublist
 
-eras_file.write("Runtime "+str(output_of_eras[1])+"\n")  #saving runtime of Sieve of Erastosthenes
-eras_file.write(str(output_of_eras[2])+" Checks performed") #saving amount of checks in Sieve of Erastosthenes
-eras_file.close()   #txt saved
+erat_file.write("Runtime "+str(output_of_erat[1])+"\n")  #saving runtime of Sieve of eratosthenes
+erat_file.write(str(output_of_erat[2])+" Checks performed") #saving amount of checks in Sieve of eratosthenes
+erat_file.close()   #txt saved
 
-print("Sieve of Erastosthenes:")
-check_file_primes(name_of_eras_file)
-print("Runtime: "+str(output_of_eras[1])+"s")
-print("Performed Checks: "+str(output_of_eras[2]))
+print("Sieve of eratosthenes:")
+check_file_primes(name_of_erat_file)
+print("Runtime: "+str(output_of_erat[1])+"s")
+print("Performed Checks: "+str(output_of_erat[2]))
 print()
 
 # clean up
-output_of_eras = []
-eras_prime = []
+output_of_erat = []
+erat_prime = []
 
 
 # -------------------- Sieve of Sundaram -------------------- #
