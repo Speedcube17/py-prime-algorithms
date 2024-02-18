@@ -27,6 +27,13 @@ timenow = time.ctime(time.time()).split()
 formattime = (str(timenow[2])+"."+str(timenow[1])+"."+str(timenow[4])+"_"+str(timenow[3]).replace(":","-"))
 
 dir_name = os.path.join(formattime+"_"+str(primes_smaller_max))
+
+
+# in this var the output directory is saved
+# a folder is created in this folder which is named after the current time
+# three subfolders will be created in the current-time-folder, containing the logs of the sieves
+# it can be changed to any valid path you may want to clutter up with large log files
+# for more informations look for python os.path
 parent_dir = "D:/Facharbeit Datensammlung/"
 
 path = os.path.join(parent_dir, dir_name)
